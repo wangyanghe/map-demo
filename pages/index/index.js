@@ -3,52 +3,65 @@
 const app = getApp()
 
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  toMap: function() {
-    wx.navigateTo({
-      url: '../map/map'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+    data: {
+        // swiper配置
+        current: 0,
+        indicatorDots: !0,
+        interval: 3e3,
+        // swiperitem
+        images:[
+            {   
+                index: '1',
+                linkType:"http_link",
+                url: 'http://www.free4inno.com/resources/913b0a61-389a-4ed6-900a-b18dbb847d68sea2.jpg',
+                title: '自由之翼',
+                link: 'http://www.free4inno.com'
+            },
+            {
+                index: '2',
+                linkType: "pic",
+                url: 'https://www.bupt.edu.cn/pluginres/picpush/db90475d30133b3e9e22d0e3ac53b540.jpg',
+                title: '2',
+                link: ''
+            },
+            {
+                index: '3',
+                linkType: "http_link",
+                url: 'https://www.bupt.edu.cn/pluginres/picpush/1483253ac76bfe29f6601863cb23357f.jpg',
+                title: '3',
+                link: 'https://www.bupt.edu.cn/'
+            },
+        ]
+        
+    },
+    //事件处理函数
+    toMap: function() {
+        wx.navigateTo({
+            url: '../map/map'
         })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+    },
+    onLoad: function() {
+
+    }, 
+    clickSwiper: function(e) {
+        let url = e.currentTarget.dataset.url;
+        let title = e.currentTarget.dataset.title;
+        let linkType = e.currentTarget.dataset.linktype;
+
+        console.log(url)
+
+        if("http_link" == linkType){
+            wx.navigateTo({
+                url: '/pages/web-page/web-page?url='+url+'&title='+title
+            })
         }
-      })
+    },
+    toIntroduce: function(e) {
+        let url ="https://www.bupt.edu.cn/";
+        let title = "景区介绍";
+
+        wx.navigateTo({
+            url: '/pages/web-page/web-page?url=' + url + '&title=' + title
+        })
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
 })

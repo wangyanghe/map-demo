@@ -1,39 +1,39 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/map/map",
-    "pages/order-list/order-list",
-    "pages/info/info"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "textColor": "#666666",
-    "selectedColor": "#66CCCC",
-    "backgroundColor": "#FFF",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "img/home.png",
-        "selectedIconPath": "img/home-1.png"
-      },
-      {
-        "pagePath": "pages/order-list/order-list",
-        "text": "订单",
-        "iconPath": "img/list.png",
-        "selectedIconPath": "img/list-1.png"
-      },
-      {
-        "pagePath": "pages/info/info",
-        "text": "我的",
-        "iconPath": "img/my.png",
-        "selectedIconPath": "img/my-1.png"
-      }
-    ]
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/map/map",
+        "pages/order-list/order-list",
+        "pages/info/info",
+        "pages/web-page/web-page"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#66CCCC",
+        "backgroundColor": "#FFF",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "img/home.png",
+                "selectedIconPath": "img/home-1.png"
+            },
+            {
+                "pagePath": "pages/order-list/order-list",
+                "text": "订单",
+                "iconPath": "img/list.png",
+                "selectedIconPath": "img/list-1.png"
+            },
+            {
+                "pagePath": "pages/info/info",
+                "text": "我的",
+                "iconPath": "img/my.png",
+                "selectedIconPath": "img/my-1.png"
+            }
+        ]
+    }
 }

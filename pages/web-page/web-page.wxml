@@ -1,0 +1,4 @@
+<!--pages/web-page/web-page.wxml-->
+<view class='scenic'>
+    <web-view src="{{url}}"></web-view>
+</view>

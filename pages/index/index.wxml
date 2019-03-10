@@ -1,9 +1,24 @@
 <!--index.wxml-->
 <view class="index-list">
-  <view class='index-right'>
-    <swiper indicator-dots="{{true}}" autoplay="{{true}}"></swiper>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    <view class='index-right'>
+        <view class='swiper-list'>
+            <swiper autoplay="true" circular="{{true}}" class="swiper" current="{{current}}" duration="300" indicatorDots="{indicatorDots}}" interval="{{interval}}" nextMargin="30rpx" onChange="changeimage" previousMargin="30rpx">
+                <swiper-item style="box-sizing:border-box;padding:0 10rpx;" wx:for="{{images}}" wx:key="{{item.index}}">
+                    <image bindtap="clickSwiper" class="swiper-imgaes-list " data-linktype="{{item.linkType}}" data-title="{{item.title}}" data-url="{{item.link}}" height="150" src="{{item.url}}" width="355"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="introduce">
+            <view bindtap="toIntroduce" class="introduce-content">
+                <view class="introduce-title">
+                    <image mode="widthFix" src="../../img/trans.png" style="width:118rpx;height:24rpx !important;padding-right:20rpx;"></image>
+                </view>
+                <view class="introduce-list">
+                    <image class="introduce-list-images" mode="" src="../../img/right.png"></image>
+                </view>
+            </view>
+        </view>
+
+    </view>
+
 </view>
